@@ -16,5 +16,9 @@ void loop () {
   }
   if(analogRead(Capteur_CO) >=1000) {
   serial.println("Sortir de la maison/appartement immédiatement");
+    digitalWrite(LED,HIGH);
+    delay(1000);
+    digitalWrite(LED,LOW);
+    delay(1000);
   }
 }
