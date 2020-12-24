@@ -8,17 +8,18 @@ void setup () {
 }
 void loop () {
   if(analogRead(Capteur_CO) <500) {
-  digitalWrite (LED, LOW);
+    digitalWrite (LED, LOW);
+    serial.print("ok");
   }
   delay(1000);
   if(analogRead(Capteur_CO) >500 <1000) {
-  digitalWrite (LED, HIGH);
+    digitalWrite (LED, HIGH);
   }
   if(analogRead(Capteur_CO) >=1000) {
-  serial.println("Sortir de la maison/appartement immédiatement");
+  serial.print("Sortir de la maison/appartement immédiatement");
     digitalWrite(LED,HIGH);
-    delay(1000);
+    delay(100);
     digitalWrite(LED,LOW);
-    delay(1000);
+    delay(100);
   }
 }
